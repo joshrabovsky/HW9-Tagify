@@ -1,0 +1,19 @@
+{
+"name": "HW9 Tagify Chrome Extension",
+"version": "1.0.0",
+"manifest_version": 3,
+"browser_action": {
+    "default_popup":"app/public/index.html",
+    "default_icon": {
+        "16": "app/public/logo192.png",
+        "32": "app/public/logo512.png",
+        "128": "app/public/logo512.png"
+    },
+    "default_title": "Open popup pls"
+    },
+    "icons": {
+        "16": "app/public/logo192.png",
+        "32": "app/public/logo512.png",
+        "128": "app/public/logo512.png"
+    }
+}
