@@ -94,7 +94,6 @@ const labelAccount = async (req, res) => {
         let sortedTweets = tweetsController.analyzeData(cleanedTweets)
         let top10Tweets = sortedTweets.slice(0, sortedTweets.length > 9 ? 9 : sortedTweets.length)
         let coherePrompt = createPrompt(userName, userDescription, top10Tweets)
-        console.log(coherePrompt)
         let generations = await asyncGetCohereGeneration(coherePrompt)
         return res.send(generations)
     } catch (error) {
