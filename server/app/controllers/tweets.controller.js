@@ -16,7 +16,9 @@ const asyncGetTwitterUserId = async (userName) => {
             headers: headers,
             "User-Agent": "v2RecentSearchJS"
         }
-        let params = {}
+        let params = {
+            "user.fields": "description"
+        }
         const response = await needle('get', query, params, options)
         
         if (response.statusCode !== 200) {
@@ -28,7 +30,7 @@ const asyncGetTwitterUserId = async (userName) => {
             }
         }
         if (response.body){
-            return response.body.data.id;
+            return [response.body.data.id, response.body.data.name, response.body.data.description];
         }else{
             throw new Error("Unsuccessful Request");
         }
