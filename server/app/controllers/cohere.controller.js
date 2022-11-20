@@ -43,12 +43,19 @@ const createPrompt = (data) => {
 
 const labelAccount = async (req, res) => {
     try {
+        console.log('A')
         let userId = await tweetsController.asyncGetTwitterUserId(req.params.id);
+        console.log('B')
         let allData = await tweetsController.asyncGetTwitterUserTags(userId);
+        console.log('C')
         let tweets = allData.data
+        console.log('E')
         let cleanedTweets = tweetsController.cleanData(tweets)
+        console.log('F')
         let sortedTweets = tweetsController.analyzeData(cleanedTweets)
+        console.log('G')
         let top10Tweets = sortedTweets.slice(0, sortedTweets.length > 20 ? 20 : sortedTweets.length)
+        console.log('H')
         let coherePrompt = createPrompt(top10Tweets)
         console.log(coherePrompt)
         let generations = await asyncGetCohereGeneration(coherePrompt)
