@@ -38,7 +38,7 @@ chrome.storage.sync.get("Add Labels", async () => {
     //   let span = createSpan("#FFA500", "white", text)
     //   parent.appendChild(span)
     // }
-    
+     
     let parent = user.parentNode
     let span1 = createSpan("#FFA500", "white", "HELLO")
     let span2 = createSpan("#FFA500", "white", "HELLO")
