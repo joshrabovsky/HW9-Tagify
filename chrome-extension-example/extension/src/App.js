@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <button onClick={changeColor}>
-          Change color
+          Add Twitter Labels
         </button>
       </header>
     </div>
