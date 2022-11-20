@@ -12,5 +12,19 @@
   
   "action": {
     "default_popup": "app/public/index.html"
-  }
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://twitter.com/*",
+        "https://mobile.twitter.com/*"
+      ],
+      "js": [
+        "app/src/content.js"
+      ]
+    }
+  ]
+
+  
 }
